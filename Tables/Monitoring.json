@@ -1,0 +1,21 @@
+{
+    "id": 423423,
+    "title": "Amigo veio dormir em casa",
+    "start": "",
+    "end": "",
+    "confirmations": {
+        "interval": 3600,
+        "datetime": null,
+        "skip_regular_confirmation_requests": true
+    },
+    "button_sequence_function": {
+        "consider_emergency": true,
+        "notify": {
+            "users": [11],
+            "groups": [26],
+            "message": "Estou em perigo",
+            "share_location": true
+        },
+        "send_notes": [98, 54]
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "id": 34,
+    "title": "Indo fazer corre",
+    "notes": "",
+    "schedule": [
+        {
+            "order": 0,
+            "type": "event",
+            "title": "Depart house",
+            "notes": "",
+            "datetime_start": "29/08/2020 10:40",
+            "datetime_end": "29/08/2020 10:40",
+            "location": {
+                "lat": "43 SN 56'E4",
+                "lon": "23 NT 12'99"
+            },
+            "visible": true,
+            "confirmation_start": false,
+            "confirmation_end": true,
+            "mandatory_confirmation": false
+        },
+        {
+            "order": 1,
+            "type": "transfer",
+            "title": "A pé",
+            "notes": "",
+            "datetime_start": "29/08/2020 10:40",
+            "datetime_end": "29/08/2020 10:40",
+            "visible": true,
+            "confirmation_start": false,
+            "confirmation_end": true,
+            "mandatory_confirmation": false
+        },
+        {
+            "id": 36,
+            "title": "Passar no banco",
+            "notes": "",
+            "datetime_start": "29/08/2020 10:50",
+            "datetime_end": "29/08/2020 10:50",
+            "location": {
+                "lat": "43 SN 56'E4",
+                "lon": "23 NT 12'99"
+            },
+            "visible": true,
+            "confirmation_start": false,
+            "confirmation_end": true,
+            "mandatory_confirmation": false
+        },
+        {
+            "id": 37,
+            "title": "Passar no diogo",
+            "notes": "",
+            "datetime_start": "29/08/2020 11:00",
+            "datetime_end": "29/08/2020 12:00",
+            "location": {
+                "lat": "43 SN 56'E4",
+                "lon": "23 NT 12'99"
+            },
+            "visible": true,
+            "ask_confirmation": true,
+            "mandatory_confirmation": true
+        },
+        {
+            "id": 38,
+            "title": "Chegar em casa",
+            "notes": "",
+            "datetime_start": "29/08/2020 12:00",
+            "datetime_end": "29/08/2020 12:00",
+            "location": {
+                "lat": "43 SN 56'E4",
+                "lon": "23 NT 12'99"
+            },
+            "visible": true,
+            "ask_confirmation": true,
+            "mandatory_confirmation": true
+        }
+    ],
+    "transportation": {
+        "schedule": [
+            {
+                "between_events": [34, 35],
+                "method": "On foot",
+                "description": "A pé",
+                "companions": [],
+                "confirmation_start": false,
+                "confirmation_end": true,
+                "visible": false,
+                "moblyt_trip": null
+            },
+            {
+                "between_events": [35, 36],
+                "description": "Ônibus 263",
+                "method": "On foot",
+                "companions": [],
+                "ask_confirmation": true,
+                "visible": false,
+                "moblyt_trip": 45645
+            },
+            {
+                "between_events": [],
+                "description": "Carona com joana",
+                "method": "On foot",
+                "companions": ["User(56)"],
+                "ask_confirmation": true,
+                "visible": false,
+                "moblyt_trip": null
+            }
+        ],
+        "moblyt_user_id": 2344
+    },
+    "companions": [],
+    "sharees": {
+        "monitoring_users": [1, 2, 3],
+        "emergency_users": [1, 2, 3],
+        "monitoring_groups": [45, 58, 96],
+        "emergency_groups": [12, 24, 37]
+    },
+    "google_calendar_id": 434
+}

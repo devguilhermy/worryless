@@ -1,0 +1,16 @@
+[
+    {
+        "id": 322343,
+        "user": 2334,
+        "event": null,
+        "datetime": "10/09/2020 12:08:34",
+        "confirmed": true
+    },
+    {
+        "id": 322343,
+        "user": null,
+        "event": 21232,
+        "datetime": "10/09/2020 12:08:34",
+        "confirmed": true
+    }
+]

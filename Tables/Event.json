@@ -6,13 +6,8 @@
         "datetime_start": "2017-12-12 12:00:00",
         "datetime_end": "2017-12-12 12:34:00",
         "repetition": {
-            "monday": true,
-            "tuesday": false,
-            "wednesday": false,
-            "thursday": true,
-            "friday": false,
-            "saturday": false,
-            "sunday": true
+            "interval_text": "daily",
+            "interval_number": 86400
         }
     },
     "locations": [
@@ -68,7 +63,7 @@
         "groups": [112, 234234],
         "users": [34742, 845],
         "only_if_emergency": true,
-        "specific_datetime": "2017-12-12 12:00:00"
+        "specific_datetime": null
     },
     "notify": {
         "at_event_start": false,
@@ -77,8 +72,8 @@
         "if_missing_step_confirmation": true
     },
     "confirmations": {
-        "event_starting": true,
-        "event_ending": true,
+        "at_event_start": true,
+        "at_event_end": true,
         "max_delay_missing_confirmation": 3600,
         "additional": [
             {

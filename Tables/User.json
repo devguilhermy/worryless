@@ -5,13 +5,16 @@
         "email_address": "gui@gmail.com",
         "sso_token": null
     },
-    "last_confirmation": {
-        "type": "2 - (1) proof of life (2) event step",
-        "confirmation_id": 23
-    },
-    "request_proof_of_life": {
+    "last_confirmation": 76,
+    "proof_of_life": {
         "interval": 86400,
-        "fixed_time": null
+        "fixed_time": null,
+        "additional": [
+            {
+                "datetime": "34u234 2389283 119hh",
+                "mandatory": true
+            }
+        ]
     },
     "sharing": {
         "notes": [

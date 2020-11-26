@@ -1,0 +1,8 @@
+{
+    "id": 75,
+    "title": "Casa matriz",
+    "description": "",
+    "iconURL": "https://icons/groupfamily.jpg",
+    "participants": [34, 56, 64, 23, 67, 96, 12, 90],
+    "administrators": [34, 56]
+}

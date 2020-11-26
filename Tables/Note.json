@@ -1,0 +1,26 @@
+{
+    "id": 223,
+    "user_id": 67,
+    "title": "Valor do note",
+    "body": "5 milhões de reais",
+    "attachments": [
+        {
+            "type": "audio",
+            "content": "./348237.mp3"
+        },
+        {
+            "type": "picture",
+            "content": "./674246.jpg"
+        }
+    ],
+    "category": 1,
+    "sharees": {
+        "users": [689],
+        "groups": []
+    },
+    "sharing_schedule": {
+		"emergency": false,
+        "posthumous": true,
+        "datetime": null
+    }
+}

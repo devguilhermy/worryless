@@ -1,0 +1,44 @@
+{
+    "title": "Subway",
+    "description": "Comprar lanche no subway",
+    "time": {
+        "text": "",
+        "datetime_start": "2020-12-12 12:00:00",
+        "datetime_end": "2017-12-12 12:34:00",
+        "repetition": {
+            "interval": "none"
+        }
+    },
+    "locations": [
+        {
+            "order": 1,
+            "address": "Subway",
+            "description": "subway ufg",
+            "coordinates": {
+                "longitude": -122.34,
+                "latitude": -122.123
+            }
+        }
+    ],
+    "companions": [],
+    "sharing": {
+        "groups": [112, 234234],
+        "users": [34742, 845],
+        "only_if_emergency": true,
+        "specific_datetime": "2017-12-12 12:00:00"
+    },
+    "notify": {
+        "at_event_start": false,
+        "if_missing_confirmation": true
+    },
+    "confirmations": {
+        "event_starting": true,
+        "event_ending": true,
+        "max_delay_missing_confirmation": 3600,
+        "additional": [
+            {
+                "specific_datetime": "2017-12-12 12:00:00"
+            }
+        ]
+    }
+}

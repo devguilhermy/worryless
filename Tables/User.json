@@ -1,0 +1,75 @@
+{
+    "id": 34,
+    "name": "Guilhermy",
+    "account": {
+        "email_address": "gui@gmail.com",
+        "sso_token": null
+    },
+    "last_confirmation": 76,
+    "proof_of_life": {
+        "interval": 86400,
+        "fixed_time": null,
+        "additional": [
+            {
+                "datetime": "34u234 2389283 119hh",
+                "mandatory": true
+            }
+        ]
+    },
+    "sharing": {
+        "notes": [
+            {
+                "note_id": 45,
+                "sharees": {
+                    "users": [23, 45],
+                    "groups": [31, 56]
+                }
+            },
+            {
+                "note_id": 89,
+                "sharees": {
+                    "users": [23, 45],
+                    "groups": [31, 56]
+                }
+            }
+        ],
+        "events": {
+            "sharees": {
+                "users": [23, 45],
+                "groups": [31, 56]
+            }
+        },
+        "location": {
+            "always_on": false,
+            "sharees": {
+                "users": [23, 45],
+                "groups": [31, 56]
+            }
+        }
+    },
+    "emergency": {
+        "missing_life_confirmation": true,
+        "missing_event_step_confirmation": true,
+        "notify": {
+            "users": [23, 65],
+            "groups": []
+        },
+        "sharing_options": {
+            "location": true,
+            "current_event": false,
+            "last_event": true,
+            "all_records": false
+        }
+    },
+    "posthumous": {
+        "max_delay_for_confirmation": null,
+        "max_confirmations_missed": 3,
+        "sharing_options": {
+            "location": true,
+            "current_event": false,
+            "last_event": true,
+            "all_records": false
+        }
+    },
+    "currentMonitoring": 23423
+}

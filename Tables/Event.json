@@ -1,0 +1,84 @@
+{
+    "title": "Ida no banco",
+    "description": "Pagar conta de luz",
+    "time": {
+        "text": "",
+        "datetime_start": "2017-12-12 12:00:00",
+        "datetime_end": "2017-12-12 12:34:00",
+        "repetition": {
+            "interval_text": "daily",
+            "interval_number": 86400
+        }
+    },
+    "locations": [
+        {
+            "order": 1,
+            "address": "Rua 23 Nº 45, Bueno, Goiânia",
+            "description": "Casa do marcelo",
+            "coordinates": {
+                "longitude": -122.34,
+                "latitude": -122.123
+            }
+        },
+        {
+            "order": 2,
+            "address": "Alameda Palmeiras - Chácaras Califórnia, Goiânia - GO, 74045-155",
+            "description": "Banco",
+            "coordinates": {
+                "longitude": -5434.34,
+                "latitude": -6565.123
+            }
+        }
+    ],
+    "transportation": {
+        "method": "foot",
+        "moblyt_trip_id": 4563664598637846738,
+        "steps": [
+            {
+                "order": 0,
+                "origin": "home",
+                "destination": "subway",
+                "datetime_start": "2017-12-12 12:00:00",
+                "datetime_end": "2017-12-12 12:34:00",
+                "confirmations": {
+                    "at_start": false,
+                    "at_end": true
+                }
+            },
+            {
+                "order": 1,
+                "origin": "subway",
+                "destination": "home",
+                "datetime_start": "2017-12-12 12:00:00",
+                "datetime_end": "2017-12-12 12:34:00",
+                "confirmations": {
+                    "at_start": false,
+                    "at_end": true
+                }
+            }
+        ]
+    },
+    "companions": [34242],
+    "sharing": {
+        "groups": [112, 234234],
+        "users": [34742, 845],
+        "only_if_emergency": true,
+        "specific_datetime": null
+    },
+    "notify": {
+        "at_event_start": false,
+        "at_event_end": false,
+        "if_missing_end_confirmation": true,
+        "if_missing_step_confirmation": true
+    },
+    "confirmations": {
+        "at_event_start": true,
+        "at_event_end": true,
+        "max_delay_missing_confirmation": 3600,
+        "additional": [
+            {
+                "specific_datetime": "2017-12-12 12:00:00"
+            }
+        ]
+    }
+}

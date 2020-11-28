@@ -1,5 +1,4 @@
 import mongoose from "../database";
-import bcrypt from "bcryptjs";
 import { uuid } from "uuidv4";
 
 interface UserDoc extends mongoose.Document {
@@ -235,4 +234,4 @@ const UserSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model("User", UserSchema);
 
-export default UserModel;
+export { UserModel };

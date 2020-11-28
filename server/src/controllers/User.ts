@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import { Request, Response } from "express";
 
 import UserModel from "../models/User";
@@ -18,7 +19,10 @@ export default {
 
             const user = {
                 name: body.name,
-                account: body.account,
+                account: {
+                    email: body.account.email,
+                    password: await bcrypt.hash(body.account.password, 10),
+                },
                 proof_of_life: body.proof_of_life,
                 emergency: body.emergency,
                 posthumous: body.posthumous,

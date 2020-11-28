@@ -20,7 +20,21 @@ export default {
         }
     },
 
-    async list(request: Request, response: Response) {},
+    async list(request: Request, response: Response) {
+        try {
+            const events = await EventModel.find();
+
+            return response.status(201).json({
+                ok: true,
+                message: "List of events fetched successfully",
+                events,
+            });
+        } catch (error) {
+            return response
+                .status(400)
+                .json({ ok: false, message: "An error occurred", error });
+        }
+    },
 
     async find(request: Request, response: Response) {},
 

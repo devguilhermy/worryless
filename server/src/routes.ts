@@ -10,10 +10,10 @@ router.get("/users/:id", UserController.find);
 router.put("/users/:id", UserController.update);
 router.delete("/users/:id", UserController.delete);
 
-router.post("/event", EventController.create);
-router.get("/event", EventController.list);
-router.get("/event/:id", EventController.find);
-router.put("/event/:id", EventController.update);
-router.delete("/event/:id", EventController.delete);
+router.post("/events", EventController.create);
+router.get("/events", EventController.list);
+router.get("/events/:id", EventController.find);
+router.put("/events/:id", EventController.update);
+router.delete("/events/:id", EventController.delete);
 
 export default router;

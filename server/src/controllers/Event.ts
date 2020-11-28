@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { request, Request, Response } from "express";
 import { EventModel } from "../models/Event";
 
 export default {
@@ -24,7 +24,7 @@ export default {
         try {
             const events = await EventModel.find();
 
-            return response.status(201).json({
+            return response.status(200).json({
                 ok: true,
                 message: "List of events fetched successfully",
                 events,
@@ -42,7 +42,7 @@ export default {
 
             const event = await EventModel.findById(id);
 
-            return response.status(201).json({
+            return response.status(200).json({
                 ok: true,
                 message: "Event data fetched successfully",
                 event,
@@ -54,7 +54,32 @@ export default {
         }
     },
 
-    async update(request: Request, response: Response) {},
+    async update(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+            const newData = request.body;
+
+            if (!(await EventModel.findById(id))) {
+                throw new Error("Couldn't find event");
+            }
+
+            const updatedEvent = await EventModel.findByIdAndUpdate(
+                id,
+                newData,
+                { new: true }
+            );
+
+            return response.status(200).json({
+                ok: true,
+                message: "Event data updated successfully!",
+                updatedEvent,
+            });
+        } catch (error) {
+            return response
+                .status(400)
+                .json({ ok: false, message: "An error occurred", error });
+        }
+    },
 
     async delete(request: Request, response: Response) {},
 };

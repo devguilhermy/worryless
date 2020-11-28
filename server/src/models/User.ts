@@ -1,5 +1,6 @@
 import mongoose from "../database";
 import bcrypt from "bcryptjs";
+import { uuid } from "uuidv4";
 
 interface UserDoc extends mongoose.Document {
     name: string;
@@ -46,6 +47,10 @@ interface UserDoc extends mongoose.Document {
 }
 
 const UserSchema = new mongoose.Schema({
+    _id: {
+        type: String,
+        default: uuid,
+    },
     name: {
         type: String,
         required: true,

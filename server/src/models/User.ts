@@ -165,11 +165,6 @@ const UserSchema = new mongoose.Schema({
                 required: true,
                 default: true,
             },
-            missing_event_step_confirmation: {
-                type: Boolean,
-                required: true,
-                default: true,
-            },
             notify: {
                 type: {
                     users: [
@@ -189,7 +184,7 @@ const UserSchema = new mongoose.Schema({
                 },
                 required: true,
             },
-            sharing_options: {
+            info_sharing_options: {
                 type: {
                     location: {
                         type: Boolean,
@@ -216,7 +211,7 @@ const UserSchema = new mongoose.Schema({
         type: {
             max_delay_for_confirmation: { type: Number, default: 86400 },
             max_confirmations_missed: { type: Number, default: 1 },
-            sharing_options: {
+            info_sharing_options: {
                 last_event: { type: Boolean, default: true },
                 all_records: { type: Boolean, default: false },
             },

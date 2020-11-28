@@ -36,7 +36,23 @@ export default {
         }
     },
 
-    async find(request: Request, response: Response) {},
+    async find(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+
+            const event = await EventModel.findById(id);
+
+            return response.status(201).json({
+                ok: true,
+                message: "Event data fetched successfully",
+                event,
+            });
+        } catch (error) {
+            return response
+                .status(400)
+                .json({ ok: false, message: "An error occurred", error });
+        }
+    },
 
     async update(request: Request, response: Response) {},
 

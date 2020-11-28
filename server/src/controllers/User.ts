@@ -94,7 +94,7 @@ export default {
                 throw new Error("There is no user with the specified id");
             }
 
-            return response.status(204).json({
+            return response.status(200).json({
                 ok: true,
                 message: "User data updated successfully",
                 updatedUser,

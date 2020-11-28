@@ -49,12 +49,11 @@
     },
     "emergency": {
         "missing_life_confirmation": true,
-        "missing_event_step_confirmation": true,
         "notify": {
             "users": [23, 65],
             "groups": []
         },
-        "sharing_options": {
+        "info_sharing_options": {
             "location": true,
             "current_event": false,
             "last_event": true,
@@ -64,9 +63,7 @@
     "posthumous": {
         "max_delay_for_confirmation": null,
         "max_confirmations_missed": 3,
-        "sharing_options": {
-            "location": true,
-            "current_event": false,
+        "info_sharing_options": {
             "last_event": true,
             "all_records": false
         }

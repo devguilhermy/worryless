@@ -72,12 +72,19 @@
         "if_missing_step_confirmation": true
     },
     "confirmations": {
-        "at_event_start": true,
-        "at_event_end": true,
+        "at_event_start": {
+            "ask": false,
+            "mandatory": false
+        },
+        "at_event_end": {
+            "ask": true,
+            "mandatory": true
+        },
         "max_delay_missing_confirmation": 3600,
         "additional": [
             {
-                "specific_datetime": "2017-12-12 12:00:00"
+                "datetime": "2017-12-12 12:00:00",
+                "mandatory": true
             }
         ]
     }

@@ -68,8 +68,7 @@
     "notify": {
         "at_event_start": false,
         "at_event_end": false,
-        "if_missing_end_confirmation": true,
-        "if_missing_step_confirmation": true
+        "if_missing_mandatory_confirmation": true
     },
     "confirmations": {
         "at_event_start": {

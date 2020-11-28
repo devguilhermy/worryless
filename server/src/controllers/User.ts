@@ -35,7 +35,7 @@ export default {
                 newUser,
             });
         } catch (error) {
-            return response.json({
+            return response.status(400).json({
                 ok: false,
                 message: "An error occurred",
                 error,
@@ -52,7 +52,7 @@ export default {
                 users,
             });
         } catch (error) {
-            return response.json({
+            return response.status(400).json({
                 ok: false,
                 message: "An error occurred",
                 error,
@@ -72,7 +72,7 @@ export default {
                 user,
             });
         } catch (error) {
-            return response.json({
+            return response.status(400).json({
                 ok: false,
                 message: "An error occurred",
                 error,
@@ -100,10 +100,33 @@ export default {
                 updatedUser,
             });
         } catch (error) {
-            return response.json({
+            return response.status(400).json({
                 ok: false,
                 message: "An error occurred",
                 error,
+            });
+        }
+    },
+    async delete(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+
+            if (!(await UserModel.exists({ _id: id }))) {
+                throw new Error("Couldn't find user");
+            }
+
+            const deletedUser = await UserModel.findByIdAndRemove(id);
+
+            return response.json({
+                ok: true,
+                message: "User deleted successfully",
+                deletedUser,
+            });
+        } catch (error) {
+            return response.status(400).json({
+                ok: false,
+                message: "An error occurred",
+                error: error.message,
             });
         }
     },

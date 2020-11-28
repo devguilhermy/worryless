@@ -1,6 +1,11 @@
+import { uuid } from "uuidv4";
 import mongoose from "../database";
 
 const EventSchema = new mongoose.Schema({
+    _id: {
+        type: String,
+        default: uuid,
+    },
     title: {
         type: String,
         required: true,
@@ -20,6 +25,7 @@ const EventSchema = new mongoose.Schema({
     },
     locations: [
         {
+            _id: false,
             order: Number,
             address: String,
             description: String,
@@ -34,6 +40,7 @@ const EventSchema = new mongoose.Schema({
         moblyt_trip_id: String || null,
         steps: [
             {
+                _id: false,
                 order: String,
                 origin: String,
                 destination: String,
@@ -56,13 +63,14 @@ const EventSchema = new mongoose.Schema({
         if_missing_mandatory_confirmation: Boolean,
     },
     confirmations: {
-        at_event_start: Boolean,
-        at_event_end: Boolean,
+        at_event_start: { ask: Boolean, mandatory: Boolean },
+        at_event_end: { ask: Boolean, mandatory: Boolean },
         max_delay_missing_confirmation: Number,
         additional: [
             {
+                _id: false,
                 datetime: Date,
-                mandatory: true,
+                mandatory: Boolean,
             },
         ],
     },

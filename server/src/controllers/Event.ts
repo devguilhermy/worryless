@@ -1,4 +1,4 @@
-import { request, Request, Response } from "express";
+import { Request, Response } from "express";
 import { EventModel } from "../models/Event";
 
 export default {
@@ -14,9 +14,11 @@ export default {
                 newEvent,
             });
         } catch (error) {
-            return response
-                .status(400)
-                .json({ ok: false, message: "An error occurred", error });
+            return response.status(400).json({
+                ok: false,
+                message: "An error occurred",
+                error: error.message,
+            });
         }
     },
 
@@ -30,9 +32,11 @@ export default {
                 events,
             });
         } catch (error) {
-            return response
-                .status(400)
-                .json({ ok: false, message: "An error occurred", error });
+            return response.status(400).json({
+                ok: false,
+                message: "An error occurred",
+                error: error.message,
+            });
         }
     },
 
@@ -40,6 +44,9 @@ export default {
         try {
             const { id } = request.params;
 
+            if (!(await EventModel.findById(id))) {
+                throw new Error("Couldn't find event");
+            }
             const event = await EventModel.findById(id);
 
             return response.status(200).json({
@@ -48,9 +55,11 @@ export default {
                 event,
             });
         } catch (error) {
-            return response
-                .status(400)
-                .json({ ok: false, message: "An error occurred", error });
+            return response.status(400).json({
+                ok: false,
+                message: "An error occurred",
+                error: error.message,
+            });
         }
     },
 
@@ -75,11 +84,35 @@ export default {
                 updatedEvent,
             });
         } catch (error) {
-            return response
-                .status(400)
-                .json({ ok: false, message: "An error occurred", error });
+            return response.status(400).json({
+                ok: false,
+                message: "An error occurred",
+                error: error.message,
+            });
         }
     },
 
-    async delete(request: Request, response: Response) {},
+    async delete(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+
+            if (!(await EventModel.findById(id))) {
+                throw new Error("Couldn't find event");
+            }
+
+            const deletedEvent = await EventModel.findByIdAndDelete(id);
+
+            return response.status(200).json({
+                ok: true,
+                message: "Event deleted successfully!",
+                deletedEvent,
+            });
+        } catch (error) {
+            return response.status(400).json({
+                ok: false,
+                message: "An error occurred",
+                error: error.message,
+            });
+        }
+    },
 };

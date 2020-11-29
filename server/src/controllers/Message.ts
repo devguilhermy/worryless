@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const messages = await MessageModel.find();
+            const messageList = await MessageModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of messages fetched successfully",
-                messages,
+                messageList,
             });
         } catch (error) {
             return response.status(400).json({

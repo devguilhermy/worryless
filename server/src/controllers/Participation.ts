@@ -26,12 +26,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const participations = await ParticipationModel.find();
+            const participationList = await ParticipationModel.find();
 
             return response.status(200).json({
                 ok: true,
-                message: "List of participations fetched successfully",
-                participations,
+                message: "List of participation fetched successfully",
+                participationList,
             });
         } catch (error) {
             return response.status(400).json({

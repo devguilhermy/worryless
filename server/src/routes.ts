@@ -47,11 +47,11 @@ router.get("/confirmations/:id", ConfirmationController.find);
 router.put("/confirmations/:id", ConfirmationController.update);
 router.delete("/confirmations/:id", ConfirmationController.delete);
 
-router.post("/monitorings", MonitoringController.create);
-router.get("/monitorings", MonitoringController.list);
-router.get("/monitorings/:id", MonitoringController.find);
-router.put("/monitorings/:id", MonitoringController.update);
-router.delete("/monitorings/:id", MonitoringController.delete);
+router.post("/monitoring", MonitoringController.create);
+router.get("/monitoring", MonitoringController.list);
+router.get("/monitoring/:id", MonitoringController.find);
+router.put("/monitoring/:id", MonitoringController.update);
+router.delete("/monitoring/:id", MonitoringController.delete);
 
 router.post("/chats", ChatController.create);
 router.get("/chats", ChatController.list);
@@ -59,10 +59,10 @@ router.get("/chats/:id", ChatController.find);
 router.put("/chats/:id", ChatController.update);
 router.delete("/chats/:id", ChatController.delete);
 
-router.post("/participations", ParticipationController.create);
-router.get("/participations", ParticipationController.list);
-router.get("/participations/:id", ParticipationController.find);
-router.put("/participations/:id", ParticipationController.update);
-router.delete("/participations/:id", ParticipationController.delete);
+router.post("/participation", ParticipationController.create);
+router.get("/participation", ParticipationController.list);
+router.get("/participation/:id", ParticipationController.find);
+router.put("/participation/:id", ParticipationController.update);
+router.delete("/participation/:id", ParticipationController.delete);
 
 export default router;

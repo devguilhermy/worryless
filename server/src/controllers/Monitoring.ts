@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const monitorings = await MonitoringModel.find();
+            const monitoringList = await MonitoringModel.find();
 
             return response.status(200).json({
                 ok: true,
-                message: "List of monitorings fetched successfully",
-                monitorings,
+                message: "List of monitoring fetched successfully",
+                monitoringList,
             });
         } catch (error) {
             return response.status(400).json({

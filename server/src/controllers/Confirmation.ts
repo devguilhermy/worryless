@@ -26,12 +26,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const confirmations = await ConfirmationModel.find();
+            const confirmationList = await ConfirmationModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of confirmations fetched successfully",
-                confirmations,
+                confirmationList,
             });
         } catch (error) {
             return response.status(400).json({

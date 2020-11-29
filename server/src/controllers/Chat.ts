@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const chats = await ChatModel.find();
+            const chatList = await ChatModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of chats fetched successfully",
-                chats,
+                chatList,
             });
         } catch (error) {
             return response.status(400).json({

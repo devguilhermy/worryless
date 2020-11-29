@@ -48,12 +48,12 @@ export default {
     },
     async list(request: Request, response: Response) {
         try {
-            const users = await UserModel.find().select("-account.password");
+            const userList = await UserModel.find().select("-account.password");
 
             return response.json({
                 ok: true,
                 message: "List of users fetched successfully",
-                users,
+                userList,
             });
         } catch (error) {
             return response.status(400).json({

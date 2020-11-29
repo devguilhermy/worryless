@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const notes = await NoteModel.find();
+            const noteList = await NoteModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of notes fetched successfully",
-                notes,
+                noteList,
             });
         } catch (error) {
             return response.status(400).json({

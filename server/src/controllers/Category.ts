@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const categories = await CategoryModel.find();
+            const categoryList = await CategoryModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of categories fetched successfully",
-                categories,
+                categoryList,
             });
         } catch (error) {
             return response.status(400).json({

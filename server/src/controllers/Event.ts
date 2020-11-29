@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const events = await EventModel.find();
+            const eventList = await EventModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of events fetched successfully",
-                events,
+                eventList,
             });
         } catch (error) {
             return response.status(400).json({

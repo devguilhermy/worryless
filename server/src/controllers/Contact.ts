@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const contacts = await ContactModel.find();
+            const contactList = await ContactModel.find();
 
             return response.status(200).json({
                 ok: true,
                 message: "List of contacts fetched successfully",
-                contacts,
+                contactList,
             });
         } catch (error) {
             return response.status(400).json({

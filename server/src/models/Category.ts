@@ -1,3 +1,4 @@
+import { SchemaTypes } from "mongoose";
 import { uuid } from "uuidv4";
 import mongoose from "../database";
 
@@ -12,7 +13,7 @@ const CategorySchema = new mongoose.Schema({
         ref: "User",
     },
     name: { type: String, required: true },
-    description: { type: String, required: true },
+    description: String,
     notes: [{ type: String, ref: "Note" }],
     events: [{ type: String, ref: "Event" }],
 });

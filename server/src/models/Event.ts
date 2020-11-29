@@ -11,6 +11,7 @@ const EventSchema = new mongoose.Schema({
         required: true,
     },
     description: String,
+    category: { type: String, ref: "Category", required: true },
     time: {
         type: {
             text: String,

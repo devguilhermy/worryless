@@ -26,8 +26,8 @@ const NoteSchema = new mongoose.Schema({
     ],
     category: { type: String, ref: "Category" },
     sharees: {
-        users: [{ type: String, ref: "User" }],
-        chats: [{ type: String, ref: "User" }],
+        chats: [{ type: String, ref: "Chat" }],
+        contacts: [{ type: String, ref: "Contact" }],
     },
     sharing_options: {
         emergency: { type: Boolean, required: true },

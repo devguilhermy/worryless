@@ -25,8 +25,8 @@ const MonitoringSchema = new mongoose.Schema({
     button_sequence_function: {
         consider_emergency: Boolean,
         notify: {
-            users: [{ type: String, ref: "User" }],
             chats: [{ type: String, ref: "Chat" }],
+            contacts: [{ type: String, ref: "Contact" }],
             message: String,
             share_location: Boolean,
         },

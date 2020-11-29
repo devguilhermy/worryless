@@ -1,7 +1,7 @@
 import { uuid } from "uuidv4";
 import mongoose from "../database";
 
-const GroupSchema = new mongoose.Schema({
+const ChatSchema = new mongoose.Schema({
     _id: {
         type: String,
         default: uuid,
@@ -24,6 +24,6 @@ const GroupSchema = new mongoose.Schema({
     ],
 });
 
-const GroupModel = mongoose.model("Group", GroupSchema);
+const ChatModel = mongoose.model("Chat", ChatSchema);
 
-export { GroupModel };
+export { ChatModel };

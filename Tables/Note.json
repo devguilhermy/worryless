@@ -16,7 +16,7 @@
     "category": 1,
     "sharees": {
         "users": [689],
-        "groups": []
+        "chats": []
     },
     "sharing_options": {
         "emergency": false,

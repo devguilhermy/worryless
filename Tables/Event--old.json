@@ -112,8 +112,8 @@
     "sharees": {
         "monitoring_users": [1, 2, 3],
         "emergency_users": [1, 2, 3],
-        "monitoring_groups": [45, 58, 96],
-        "emergency_groups": [12, 24, 37]
+        "monitoring_chats": [45, 58, 96],
+        "emergency_chats": [12, 24, 37]
     },
     "google_calendar_id": 434
 }

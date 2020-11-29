@@ -60,7 +60,7 @@
     },
     "companions": [34242],
     "sharing": {
-        "groups": [112, 234234],
+        "chats": [112, 234234],
         "users": [34742, 845],
         "only_if_emergency": true,
         "specific_datetime": null

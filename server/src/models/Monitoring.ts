@@ -26,7 +26,7 @@ const MonitoringSchema = new mongoose.Schema({
         consider_emergency: Boolean,
         notify: {
             users: [{ type: String, ref: "User" }],
-            groups: [{ type: String, ref: "Group" }],
+            chats: [{ type: String, ref: "Chat" }],
             message: String,
             share_location: Boolean,
         },

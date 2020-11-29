@@ -1,0 +1,11 @@
+{
+    "user_id": "2344234324",
+    "chat_id": "267234466",
+    "text": "aaaaaaa",
+    "attachments": [
+        { "type": "url", "url": "http://localhost.peganaminhapica.org" },
+        { "type": "audio", "url": "http://localhost.audio.org/.mp3" }
+    ],
+    "note_id": null,
+    "event_id": null
+}

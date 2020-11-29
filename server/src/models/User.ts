@@ -24,7 +24,7 @@ interface UserDoc extends mongoose.Document {
         missing_event_step_confirmation: boolean;
         notify: {
             users: Array<number>;
-            groups: Array<number>;
+            chats: Array<number>;
         };
         sharing_options: {
             location: boolean;
@@ -104,10 +104,10 @@ const UserSchema = new mongoose.Schema({
     //                         required: true,
     //                     },
     //                 ],
-    //                 groups: [
+    //                 chats: [
     //                     {
     //                         type: mongoose.Schema.Types.ObjectId,
-    //                         ref: "Group",
+    //                         ref: "Chat",
     //                         required: true,
     //                     },
     //                 ],
@@ -129,10 +129,10 @@ const UserSchema = new mongoose.Schema({
     //                         required: true,
     //                     },
     //                 ],
-    //                 groups: [
+    //                 chats: [
     //                     {
     //                         type: mongoose.Schema.Types.ObjectId,
-    //                         ref: "Group",
+    //                         ref: "Chat",
     //                         required: true,
     //                     },
     //                 ],
@@ -152,10 +152,10 @@ const UserSchema = new mongoose.Schema({
     //                     required: true,
     //                 },
     //             ],
-    //             groups: [
+    //             chats: [
     //                 {
     //                     type: mongoose.Schema.Types.ObjectId,
-    //                     ref: "Group",
+    //                     ref: "Chat",
     //                     required: true,
     //                 },
     //             ],
@@ -178,10 +178,10 @@ const UserSchema = new mongoose.Schema({
                             required: true,
                         },
                     ],
-                    groups: [
+                    chats: [
                         {
                             type: mongoose.Schema.Types.ObjectId,
-                            ref: "Group",
+                            ref: "Chat",
                             required: true,
                         },
                     ],

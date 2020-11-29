@@ -1,17 +1,17 @@
 import { Request, Response } from "express";
-import { GroupModel } from "../models/Group";
+import { ChatModel } from "../models/Chat";
 
 export default {
     async create(request: Request, response: Response) {
         try {
-            const group = request.body;
+            const chat = request.body;
 
-            const newGroup = await GroupModel.create(group);
+            const newChat = await ChatModel.create(chat);
 
             return response.status(201).json({
                 ok: true,
-                message: "Group created successfully",
-                newGroup,
+                message: "Chat created successfully",
+                newChat,
             });
         } catch (error) {
             return response.status(400).json({
@@ -24,12 +24,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const groups = await GroupModel.find();
+            const chats = await ChatModel.find();
 
             return response.status(200).json({
                 ok: true,
-                message: "List of groups fetched successfully",
-                groups,
+                message: "List of chats fetched successfully",
+                chats,
             });
         } catch (error) {
             return response.status(400).json({
@@ -44,15 +44,15 @@ export default {
         try {
             const { id } = request.params;
 
-            if (!(await GroupModel.findById(id))) {
-                throw new Error("Couldn't find group");
+            if (!(await ChatModel.findById(id))) {
+                throw new Error("Couldn't find chat");
             }
-            const group = await GroupModel.findById(id);
+            const chat = await ChatModel.findById(id);
 
             return response.status(200).json({
                 ok: true,
-                message: "Group data fetched successfully",
-                group,
+                message: "Chat data fetched successfully",
+                chat,
             });
         } catch (error) {
             return response.status(400).json({
@@ -68,20 +68,18 @@ export default {
             const { id } = request.params;
             const newData = request.body;
 
-            if (!(await GroupModel.findById(id))) {
-                throw new Error("Couldn't find group");
+            if (!(await ChatModel.findById(id))) {
+                throw new Error("Couldn't find chat");
             }
 
-            const updatedGroup = await GroupModel.findByIdAndUpdate(
-                id,
-                newData,
-                { new: true }
-            );
+            const updatedChat = await ChatModel.findByIdAndUpdate(id, newData, {
+                new: true,
+            });
 
             return response.status(200).json({
                 ok: true,
-                message: "Group data updated successfully!",
-                updatedGroup,
+                message: "Chat data updated successfully!",
+                updatedChat,
             });
         } catch (error) {
             return response.status(400).json({
@@ -96,16 +94,16 @@ export default {
         try {
             const { id } = request.params;
 
-            if (!(await GroupModel.findById(id))) {
-                throw new Error("Couldn't find group");
+            if (!(await ChatModel.findById(id))) {
+                throw new Error("Couldn't find chat");
             }
 
-            const deletedGroup = await GroupModel.findByIdAndDelete(id);
+            const deletedChat = await ChatModel.findByIdAndDelete(id);
 
             return response.status(200).json({
                 ok: true,
-                message: "Group deleted successfully!",
-                deletedGroup,
+                message: "Chat deleted successfully!",
+                deletedChat,
             });
         } catch (error) {
             return response.status(400).json({

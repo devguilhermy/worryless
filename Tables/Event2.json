@@ -22,7 +22,7 @@
     ],
     "companions": [],
     "sharing": {
-        "groups": [112, 234234],
+        "chats": [112, 234234],
         "users": [34742, 845],
         "only_if_emergency": true,
         "specific_datetime": "2017-12-12 12:00:00"

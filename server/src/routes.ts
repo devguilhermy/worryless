@@ -6,7 +6,7 @@ import ContactController from "./controllers/Contact";
 import NoteController from "./controllers/Note";
 import ConfirmationController from "./controllers/Confirmation";
 import MonitoringController from "./controllers/Monitoring";
-import GroupController from "./controllers/Group";
+import ChatController from "./controllers/Chat";
 
 const router = express.Router();
 
@@ -52,10 +52,10 @@ router.get("/monitorings/:id", MonitoringController.find);
 router.put("/monitorings/:id", MonitoringController.update);
 router.delete("/monitorings/:id", MonitoringController.delete);
 
-router.post("/groups", GroupController.create);
-router.get("/groups", GroupController.list);
-router.get("/groups/:id", GroupController.find);
-router.put("/groups/:id", GroupController.update);
-router.delete("/groups/:id", GroupController.delete);
+router.post("/chats", ChatController.create);
+router.get("/chats", ChatController.list);
+router.get("/chats/:id", ChatController.find);
+router.put("/chats/:id", ChatController.update);
+router.delete("/chats/:id", ChatController.delete);
 
 export default router;

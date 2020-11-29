@@ -12,7 +12,7 @@
         "consider_emergency": true,
         "notify": {
             "users": [11],
-            "groups": [26],
+            "chats": [26],
             "message": "Estou em perigo",
             "share_location": true
         },

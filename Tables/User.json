@@ -22,28 +22,28 @@
                 "note_id": 45,
                 "sharees": {
                     "users": [23, 45],
-                    "groups": [31, 56]
+                    "chats": [31, 56]
                 }
             },
             {
                 "note_id": 89,
                 "sharees": {
                     "users": [23, 45],
-                    "groups": [31, 56]
+                    "chats": [31, 56]
                 }
             }
         ],
         "events": {
             "sharees": {
                 "users": [23, 45],
-                "groups": [31, 56]
+                "chats": [31, 56]
             }
         },
         "location": {
             "always_on": false,
             "sharees": {
                 "users": [23, 45],
-                "groups": [31, 56]
+                "chats": [31, 56]
             }
         }
     },
@@ -51,7 +51,7 @@
         "missing_life_confirmation": true,
         "notify": {
             "users": [23, 65],
-            "groups": []
+            "chats": []
         },
         "info_sharing_options": {
             "location": true,

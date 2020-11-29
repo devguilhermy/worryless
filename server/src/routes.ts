@@ -6,6 +6,7 @@ import ContactController from "./controllers/Contact";
 import NoteController from "./controllers/Note";
 import ConfirmationController from "./controllers/Confirmation";
 import MonitoringController from "./controllers/Monitoring";
+import GroupController from "./controllers/Group";
 
 const router = express.Router();
 
@@ -50,5 +51,11 @@ router.get("/monitorings", MonitoringController.list);
 router.get("/monitorings/:id", MonitoringController.find);
 router.put("/monitorings/:id", MonitoringController.update);
 router.delete("/monitorings/:id", MonitoringController.delete);
+
+router.post("/groups", GroupController.create);
+router.get("/groups", GroupController.list);
+router.get("/groups/:id", GroupController.find);
+router.put("/groups/:id", GroupController.update);
+router.delete("/groups/:id", GroupController.delete);
 
 export default router;

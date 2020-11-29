@@ -47,12 +47,12 @@ export default {
             if (!(await MessageModel.findById(id))) {
                 throw new Error("Couldn't find message");
             }
-            const message = await MessageModel.findById(id);
+            const messageData = await MessageModel.findById(id);
 
             return response.status(200).json({
                 ok: true,
                 message: "Message data fetched successfully",
-                message,
+                messageData,
             });
         } catch (error) {
             return response.status(400).json({

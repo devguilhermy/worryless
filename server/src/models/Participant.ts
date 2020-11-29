@@ -1,7 +1,7 @@
 import { uuid } from "uuidv4";
 import mongoose from "../database";
 
-const ParticipantSchema = new mongoose.Schema({
+const ParticipationSchema = new mongoose.Schema({
     _id: {
         type: String,
         default: uuid,
@@ -10,6 +10,6 @@ const ParticipantSchema = new mongoose.Schema({
     chat_id: { type: String, ref: "Chat", required: true },
 });
 
-const ParticipantModel = mongoose.model("Participant", ParticipantSchema);
+const ParticipationModel = mongoose.model("Participation", ParticipationSchema);
 
-export { ParticipantModel };
+export { ParticipationModel };

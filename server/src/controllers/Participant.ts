@@ -1,17 +1,19 @@
 import { Request, Response } from "express";
-import { ParticipantModel } from "../models/Participant";
+import { ParticipationModel } from "../models/Participation";
 
 export default {
     async create(request: Request, response: Response) {
         try {
-            const participant = request.body;
+            const participation = request.body;
 
-            const newParticipant = await ParticipantModel.create(participant);
+            const newParticipation = await ParticipationModel.create(
+                participation
+            );
 
             return response.status(201).json({
                 ok: true,
-                message: "Participant created successfully",
-                newParticipant,
+                message: "Participation created successfully",
+                newParticipation,
             });
         } catch (error) {
             return response.status(400).json({
@@ -24,12 +26,12 @@ export default {
 
     async list(request: Request, response: Response) {
         try {
-            const participants = await ParticipantModel.find();
+            const participations = await ParticipationModel.find();
 
             return response.status(200).json({
                 ok: true,
-                message: "List of participants fetched successfully",
-                participants,
+                message: "List of participations fetched successfully",
+                participations,
             });
         } catch (error) {
             return response.status(400).json({
@@ -44,15 +46,15 @@ export default {
         try {
             const { id } = request.params;
 
-            if (!(await ParticipantModel.findById(id))) {
-                throw new Error("Couldn't find participant");
+            if (!(await ParticipationModel.findById(id))) {
+                throw new Error("Couldn't find participation");
             }
-            const participantData = await ParticipantModel.findById(id);
+            const participationData = await ParticipationModel.findById(id);
 
             return response.status(200).json({
                 ok: true,
-                message: "Participant data fetched successfully",
-                participantData,
+                message: "Participation data fetched successfully",
+                participationData,
             });
         } catch (error) {
             return response.status(400).json({
@@ -68,11 +70,11 @@ export default {
             const { id } = request.params;
             const newData = request.body;
 
-            if (!(await ParticipantModel.findById(id))) {
-                throw new Error("Couldn't find participant");
+            if (!(await ParticipationModel.findById(id))) {
+                throw new Error("Couldn't find participation");
             }
 
-            const updatedParticipant = await ParticipantModel.findByIdAndUpdate(
+            const updatedParticipation = await ParticipationModel.findByIdAndUpdate(
                 id,
                 newData,
                 { new: true }
@@ -80,8 +82,8 @@ export default {
 
             return response.status(200).json({
                 ok: true,
-                message: "Participant data updated successfully!",
-                updatedParticipant,
+                message: "Participation data updated successfully!",
+                updatedParticipation,
             });
         } catch (error) {
             return response.status(400).json({
@@ -96,18 +98,18 @@ export default {
         try {
             const { id } = request.params;
 
-            if (!(await ParticipantModel.findById(id))) {
-                throw new Error("Couldn't find participant");
+            if (!(await ParticipationModel.findById(id))) {
+                throw new Error("Couldn't find participation");
             }
 
-            const deletedParticipant = await ParticipantModel.findByIdAndDelete(
+            const deletedParticipation = await ParticipationModel.findByIdAndDelete(
                 id
             );
 
             return response.status(200).json({
                 ok: true,
-                message: "Participant deleted successfully!",
-                deletedParticipant,
+                message: "Participation deleted successfully!",
+                deletedParticipation,
             });
         } catch (error) {
             return response.status(400).json({

@@ -15,7 +15,7 @@ const ChatSchema = new mongoose.Schema({
         required: true,
     },
     icon_url: String,
-    participants: [
+    participations: [
         {
             _id: false,
             user_id: { type: String, required: true },

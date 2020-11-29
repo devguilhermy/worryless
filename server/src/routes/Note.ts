@@ -2,10 +2,10 @@ import express from "express";
 import NoteController from "../controllers/Note";
 const router = express.Router();
 
-router.post("/notes", NoteController.create);
-router.get("/notes", NoteController.list);
-router.get("/notes/:id", NoteController.find);
-router.put("/notes/:id", NoteController.update);
-router.delete("/notes/:id", NoteController.delete);
+router.post("/", NoteController.create);
+router.get("/", NoteController.list);
+router.get("/:id", NoteController.find);
+router.put("/:id", NoteController.update);
+router.delete("/:id", NoteController.delete);
 
 export default router;

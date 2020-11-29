@@ -18,8 +18,8 @@
         "users": [689],
         "groups": []
     },
-    "sharing_schedule": {
-		"emergency": false,
+    "sharing_options": {
+        "emergency": false,
         "posthumous": true,
         "datetime": null
     }

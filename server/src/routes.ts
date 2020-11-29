@@ -3,6 +3,7 @@ import UserController from "./controllers/User";
 import EventController from "./controllers/Event";
 import CategoryController from "./controllers/Category";
 import ContactController from "./controllers/Contact";
+import NoteController from "./controllers/Note";
 
 const router = express.Router();
 
@@ -29,5 +30,11 @@ router.get("/contacts", ContactController.list);
 router.get("/contacts/:id", ContactController.find);
 router.put("/contacts/:id", ContactController.update);
 router.delete("/contacts/:id", ContactController.delete);
+
+router.post("/notes", NoteController.create);
+router.get("/notes", NoteController.list);
+router.get("/notes/:id", NoteController.find);
+router.put("/notes/:id", NoteController.update);
+router.delete("/notes/:id", NoteController.delete);
 
 export default router;

@@ -7,6 +7,7 @@ import NoteController from "./controllers/Note";
 import ConfirmationController from "./controllers/Confirmation";
 import MonitoringController from "./controllers/Monitoring";
 import ChatController from "./controllers/Chat";
+import ParticipantController from "./controllers/Participant";
 
 const router = express.Router();
 
@@ -57,5 +58,11 @@ router.get("/chats", ChatController.list);
 router.get("/chats/:id", ChatController.find);
 router.put("/chats/:id", ChatController.update);
 router.delete("/chats/:id", ChatController.delete);
+
+router.post("/participants", ParticipantController.create);
+router.get("/participants", ParticipantController.list);
+router.get("/participants/:id", ParticipantController.find);
+router.put("/participants/:id", ParticipantController.update);
+router.delete("/participants/:id", ParticipantController.delete);
 
 export default router;

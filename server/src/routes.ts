@@ -5,6 +5,7 @@ import CategoryController from "./controllers/Category";
 import ContactController from "./controllers/Contact";
 import NoteController from "./controllers/Note";
 import ConfirmationController from "./controllers/Confirmation";
+import MonitoringController from "./controllers/Monitoring";
 
 const router = express.Router();
 
@@ -43,5 +44,11 @@ router.get("/confirmations", ConfirmationController.list);
 router.get("/confirmations/:id", ConfirmationController.find);
 router.put("/confirmations/:id", ConfirmationController.update);
 router.delete("/confirmations/:id", ConfirmationController.delete);
+
+router.post("/monitorings", MonitoringController.create);
+router.get("/monitorings", MonitoringController.list);
+router.get("/monitorings/:id", MonitoringController.find);
+router.put("/monitorings/:id", MonitoringController.update);
+router.delete("/monitorings/:id", MonitoringController.delete);
 
 export default router;

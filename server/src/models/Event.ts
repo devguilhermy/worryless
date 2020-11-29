@@ -53,8 +53,8 @@ const EventSchema = new mongoose.Schema({
     },
     companions: [String],
     sharing: {
-        groups: [String],
-        users: [String],
+        groups: [{ type: String, ref: "Group" }],
+        users: [{ type: String, ref: "User" }],
         only_if_emergency: Boolean,
         specific_datetime: Date || null,
     },

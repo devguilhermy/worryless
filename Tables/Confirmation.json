@@ -4,6 +4,7 @@
         "user": 2334,
         "event": null,
         "datetime": "10/09/2020 12:08:34",
+        "mandatory": true,
         "confirmed": true
     },
     {
@@ -11,6 +12,7 @@
         "user": null,
         "event": 21232,
         "datetime": "10/09/2020 12:08:34",
+        "mandatory": true,
         "confirmed": true
     }
 ]

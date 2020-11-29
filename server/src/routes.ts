@@ -4,6 +4,7 @@ import EventController from "./controllers/Event";
 import CategoryController from "./controllers/Category";
 import ContactController from "./controllers/Contact";
 import NoteController from "./controllers/Note";
+import ConfirmationController from "./controllers/Confirmation";
 
 const router = express.Router();
 
@@ -36,5 +37,11 @@ router.get("/notes", NoteController.list);
 router.get("/notes/:id", NoteController.find);
 router.put("/notes/:id", NoteController.update);
 router.delete("/notes/:id", NoteController.delete);
+
+router.post("/confirmations", ConfirmationController.create);
+router.get("/confirmations", ConfirmationController.list);
+router.get("/confirmations/:id", ConfirmationController.find);
+router.put("/confirmations/:id", ConfirmationController.update);
+router.delete("/confirmations/:id", ConfirmationController.delete);
 
 export default router;

@@ -8,25 +8,19 @@ const MessageSchema = new mongoose.Schema({
     },
     user_id: {
         type: String,
+        ref: "User",
         required: true,
-        ref: "User",
     },
-    referencing_user_id: {
+    chat_id: {
         type: String,
-        ref: "User",
+        ref: "Chat",
+        required: true,
     },
-    name: { type: String, required: true },
-    contact_info: {
-        phone: { type: String, required: true },
-        is_whatsapp: { type: Boolean, required: true },
-        email_address: { type: String, required: true },
-        facebook: String,
-        instagram: String,
-        twitter: String,
-    },
-    relationship: { type: String, required: true },
-    notes: String,
-    emergency: { type: Boolean, required: true },
+    text: { type: String, required: true },
+    attachments: [{ type: { type: String, url: String } }],
+    note_id: { type: String, ref: "Note" },
+    event_id: { type: String, ref: "Event" },
+    created_at: { type: Date, default: Date.now },
 });
 
 const MessageModel = mongoose.model("Message", MessageSchema);

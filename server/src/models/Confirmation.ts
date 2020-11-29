@@ -18,6 +18,7 @@ const ConfirmationSchema = new mongoose.Schema({
     datetime: { type: Date, default: Date.now },
     mandatory: { type: Boolean, required: true },
     confirmed: { type: Boolean, required: true },
+    created_at: { type: Date, default: Date.now },
 });
 
 const ConfirmationModel = mongoose.model("Confirmation", ConfirmationSchema);

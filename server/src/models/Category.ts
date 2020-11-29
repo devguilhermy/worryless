@@ -16,6 +16,7 @@ const CategorySchema = new mongoose.Schema({
     description: String,
     notes: [{ type: String, ref: "Note" }],
     events: [{ type: String, ref: "Event" }],
+    created_at: { type: Date, default: Date.now },
 });
 
 const CategoryModel = mongoose.model("Category", CategorySchema);

@@ -34,6 +34,7 @@ const NoteSchema = new mongoose.Schema({
         posthumous: { type: Boolean, required: true },
         datetime: Date,
     },
+    created_at: { type: Date, default: Date.now },
 });
 
 const NoteModel = mongoose.model("Note", NoteSchema);

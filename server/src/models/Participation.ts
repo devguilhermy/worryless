@@ -8,6 +8,7 @@ const Participationchema = new mongoose.Schema({
     },
     user_id: { type: String, ref: "User", required: true },
     chat_id: { type: String, ref: "Chat", required: true },
+    created_at: { type: Date, default: Date.now },
 });
 
 const ParticipationModel = mongoose.model("Participation", Participationchema);

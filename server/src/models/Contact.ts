@@ -27,6 +27,7 @@ const ContactSchema = new mongoose.Schema({
     relationship: { type: String, required: true },
     notes: String,
     emergency: { type: Boolean, required: true },
+    created_at: { type: Date, default: Date.now },
 });
 
 const ContactModel = mongoose.model("Contact", ContactSchema);

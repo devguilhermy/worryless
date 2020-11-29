@@ -15,13 +15,8 @@ const ChatSchema = new mongoose.Schema({
         required: true,
     },
     icon_url: String,
-    participation: [
-        {
-            _id: false,
-            user_id: { type: String, required: true },
-            is_admin: { type: Boolean, required: true },
-        },
-    ],
+    created_by: { type: String, ref: "User", required: true },
+    created_at: { type: Date, default: Date.now },
 });
 
 const ChatModel = mongoose.model("Chat", ChatSchema);

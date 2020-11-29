@@ -32,6 +32,7 @@ const MonitoringSchema = new mongoose.Schema({
         },
         send_notes: [{ type: String, ref: "Note" }],
     },
+    created_at: { type: Date, default: Date.now },
 });
 
 const MonitoringModel = mongoose.model("Monitoring", MonitoringSchema);

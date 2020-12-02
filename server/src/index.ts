@@ -1,23 +1,21 @@
-import express from "express";
-import router from "./routes";
-import cors from "cors";
-import { Server } from "typescript-rest";
+import "reflect-metadata";
+import {createConnection} from "typeorm";
+import {User} from "./entity/User";
 
-import "./handlers";
+createConnection().then(async connection => {
 
-export const app: express.Application = express();
+    console.log("Inserting a new user into the database...");
+    const user = new User();
+    user.firstName = "Timber";
+    user.lastName = "Saw";
+    user.age = 25;
+    await connection.manager.save(user);
+    console.log("Saved a new user with id: " + user.id);
 
-app.use(cors());
-app.use(express.json());
-app.use(router);
+    console.log("Loading users from the database...");
+    const users = await connection.manager.find(User);
+    console.log("Loaded users: ", users);
 
-Server.buildServices(app);
+    console.log("Here you can setup and run express/koa/any other framework.");
 
-let port = parseInt(process.env.PORT || "");
-if (isNaN(port) || port === 0) {
-    port = 8080;
-}
-
-app.listen(port, "0.0.0.0", () => {
-    console.log(`Server started on Port ${port}`);
-});
+}).catch(error => console.log(error));
